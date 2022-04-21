@@ -26,7 +26,6 @@ COMMENT ON COLUMN numero_departamento IS "Numero do departamento em que o funcio
 
 
 
-
 CREATE TABLE departamento (
                 numero_departamento INT NOT NULL,
                 nome_departamento VARCHAR(15) NOT NULL,
@@ -35,6 +34,11 @@ CREATE TABLE departamento (
                 PRIMARY KEY (numero_departamento),
                 UNIQUE (cpf_gerente)
 );
+COMMENT ON TABLE departamento IS "Tabela com informações sobre os departamentos.";
+COMMENT ON COLUMN numero_departamento IS "Numero do departamento.";
+COMMENT ON COLUMN nome_departamento IS "Nome do departamento.";
+COMMENT ON COLUMN cpf_gerente IS "Nome do gerente do departamento.";
+COMMENT ON COLUMN data_inicio_gerente IS "Data de inicio do gerente no departamento em questão.";
 
 
 CREATE TABLE localizacoes_departamento (
@@ -42,6 +46,9 @@ CREATE TABLE localizacoes_departamento (
                 local VARCHAR(15) NOT NULL,
                 PRIMARY KEY (numero_departamento, local)
 );
+COMMENT ON TABLE localizacoes_departamento IS "Tabela com a localização dos departamentos.";
+COMMENT ON COLUMN numero_departamento IS "Numero do departamento em questão.";
+COMMENT ON COLUMN local IS "Endereço do departamento.";
 
 
 CREATE TABLE projeto (
