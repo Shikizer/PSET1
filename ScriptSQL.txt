@@ -33,6 +33,7 @@ CREATE TABLE departamento (
                 data_inicio_gerente DATE,
                 PRIMARY KEY (numero_departamento),
                 UNIQUE (cpf_gerente)
+                UNIQUE (nome_departamento)
 );
 COMMENT ON TABLE departamento IS "Tabela com informações sobre os departamentos.";
 COMMENT ON COLUMN numero_departamento IS "Numero do departamento.";
@@ -58,6 +59,10 @@ CREATE TABLE projeto (
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (numero_projeto)
 );
+COMMENT ON TABLE projeto IS "Tabela com as informações sobre determinado projeto.";
+COMMENT ON COLUMN numero_projeto IS "Numero do projeto.";
+COMMENT ON COLUMN nome_projeto IS "Nome do projeto.";
+COMMENT ON COLUMN numero_departamento IS "Numero do departamento em que o projeto esta.";
 
 
 CREATE TABLE trabalha_em (
@@ -66,6 +71,10 @@ CREATE TABLE trabalha_em (
                 horas DECIMAL(3,1) NOT NULL,
                 PRIMARY KEY (cpf_funcionario, numero_projeto)
 );
+COMMENT ON TABLE trabalha_em IS "Tabela com informações sobre onde os funcionarios trabalham e em que projeto eles estão.";
+COMMENT ON COLUMN cpf_funcionario IS "CPF do funcionario.";
+COMMENT ON COLUMN numero_projeto IS "Numero do projeto em que o funcionario esta presente.";
+COMMENT ON COLUMN horas IS "Horas que o funcionario gastou neste projeto.";
 
 
 CREATE TABLE dependente (
@@ -76,6 +85,12 @@ CREATE TABLE dependente (
                 parentesco VARCHAR(15),
                 PRIMARY KEY (cpf_funcionario, nome_dependente)
 );
+COMMENT ON TABLE dependente IS "Informações sobre os dependentes do funcionario.";
+COMMENT ON COLUMN cpf_funcionario IS "CPF do funcionario.";
+COMMENT ON COLUMN nome_dependente IS "Nome do dependente do funcionario.";
+COMMENT ON COLUMN sexo IS "Genero do dependente.";
+COMMENT ON COLUMN data_nascimento IS "Data de nascimento do dependente.";
+COMMENT ON COLUMN parentesco IS "Grau de parentesco entre o dependente e o funcionario.";
 
 
 ALTER TABLE funcionarios ADD CONSTRAINT funcionarios_funcionarios_fk
