@@ -12,16 +12,16 @@ CREATE TABLE funcionarios (
                 PRIMARY KEY (cpf)
 );
 COMMENT ON TABLE funcionarios IS 'Tabela com as informações dos funcionarios.';
-COMMENT ON COLUMN cpf IS 'CPF do funcionario.';
-COMMENT ON COLUMN primeiro_nome IS 'Primeiro nome do funcionario.';
-COMMENT ON COLUMN nome_meio IS 'Nome do meio do funcionario.';
-COMMENT ON COLUMN ultimo_nome IS 'Ultimo nome do funcionario.';
-COMMENT ON COLUMN data_nascimento IS 'Data de nascimento do funcionario.';
-COMMENT ON COLUMN endereco IS 'Endereco do funcionario.';
-COMMENT ON COLUMN sexo IS 'Genero do funcionario.';
-COMMENT ON COLUMN salario IS 'Salario do funcionario.';
-COMMENT ON COLUMN cpf_supervisor IS 'CPF do supervisor deste funcionario.';
-COMMENT ON COLUMN numero_departamento IS 'Numero do departamento em que o funcionario esta.';
+COMMENT ON COLUMN funcionarios.cpf IS 'CPF do funcionario.';
+COMMENT ON COLUMN funcionarios.primeiro_nome IS 'Primeiro nome do funcionario.';
+COMMENT ON COLUMN funcionarios.nome_meio IS 'Nome do meio do funcionario.';
+COMMENT ON COLUMN funcionarios.ultimo_nome IS 'Ultimo nome do funcionario.';
+COMMENT ON COLUMN funcionarios.data_nascimento IS 'Data de nascimento do funcionario.';
+COMMENT ON COLUMN funcionarios.endereco IS 'Endereco do funcionario.';
+COMMENT ON COLUMN funcionarios.sexo IS 'Genero do funcionario.';
+COMMENT ON COLUMN funcionarios.salario IS 'Salario do funcionario.';
+COMMENT ON COLUMN funcionarios.cpf_supervisor IS 'CPF do supervisor deste funcionario.';
+COMMENT ON COLUMN funcionarios.numero_departamento IS 'Numero do departamento em que o funcionario esta.';
 
 
 
@@ -35,10 +35,10 @@ CREATE TABLE departamento (
                 UNIQUE (nome_departamento)
 );
 COMMENT ON TABLE departamento IS 'Tabela com informações sobre os departamentos.';
-COMMENT ON COLUMN numero_departamento IS 'Numero do departamento.';
-COMMENT ON COLUMN nome_departamento IS 'Nome do departamento.';
-COMMENT ON COLUMN cpf_gerente IS 'Nome do gerente do departamento.';
-COMMENT ON COLUMN data_inicio_gerente IS 'Data de inicio do gerente no departamento em questão.';
+COMMENT ON COLUMN departamento.numero_departamento IS 'Numero do departamento.';
+COMMENT ON COLUMN departamento.nome_departamento IS 'Nome do departamento.';
+COMMENT ON COLUMN departamento.cpf_gerente IS 'Nome do gerente do departamento.';
+COMMENT ON COLUMN departamento.data_inicio_gerente IS 'Data de inicio do gerente no departamento em questão.';
 
 
 CREATE TABLE localizacoes_departamento (
@@ -47,8 +47,8 @@ CREATE TABLE localizacoes_departamento (
                 PRIMARY KEY (numero_departamento, local)
 );
 COMMENT ON TABLE localizacoes_departamento IS 'Tabela com a localização dos departamentos.';
-COMMENT ON COLUMN numero_departamento IS 'Numero do departamento em questão.';
-COMMENT ON COLUMN local IS 'Endereço do departamento.';
+COMMENT ON COLUMN localizacoes_departamento.numero_departamento IS 'Numero do departamento em questão.';
+COMMENT ON COLUMN localizacoes_departamento.local IS 'Endereço do departamento.';
 
 
 CREATE TABLE projeto (
@@ -59,9 +59,9 @@ CREATE TABLE projeto (
                 PRIMARY KEY (numero_projeto)
 );
 COMMENT ON TABLE projeto IS 'Tabela com as informações sobre determinado projeto.';
-COMMENT ON COLUMN numero_projeto IS 'Numero do projeto.';
-COMMENT ON COLUMN nome_projeto IS 'Nome do projeto.';
-COMMENT ON COLUMN numero_departamento IS 'Numero do departamento em que o projeto esta.';
+COMMENT ON COLUMN projeto.numero_projeto IS 'Numero do projeto.';
+COMMENT ON COLUMN projeto.nome_projeto IS 'Nome do projeto.';
+COMMENT ON COLUMN projeto.numero_departamento IS 'Numero do departamento em que o projeto esta.';
 
 
 CREATE TABLE trabalha_em (
@@ -71,9 +71,9 @@ CREATE TABLE trabalha_em (
                 PRIMARY KEY (cpf_funcionario, numero_projeto)
 );
 COMMENT ON TABLE trabalha_em IS 'Tabela com informações sobre onde os funcionarios trabalham e em que projeto eles estão.';
-COMMENT ON COLUMN cpf_funcionario IS 'CPF do funcionario.';
-COMMENT ON COLUMN numero_projeto IS 'Numero do projeto em que o funcionario esta presente.';
-COMMENT ON COLUMN horas IS 'Horas que o funcionario gastou neste projeto.';
+COMMENT ON COLUMN trabalha_em.cpf_funcionario IS 'CPF do funcionario.';
+COMMENT ON COLUMN trabalha_em.numero_projeto IS 'Numero do projeto em que o funcionario esta presente.';
+COMMENT ON COLUMN trabalha_em.horas IS 'Horas que o funcionario gastou neste projeto.';
 
 
 CREATE TABLE dependente (
@@ -85,11 +85,11 @@ CREATE TABLE dependente (
                 PRIMARY KEY (cpf_funcionario, nome_dependente)
 );
 COMMENT ON TABLE dependente IS 'Informações sobre os dependentes do funcionario.';
-COMMENT ON COLUMN cpf_funcionario IS 'CPF do funcionario.';
-COMMENT ON COLUMN nome_dependente IS 'Nome do dependente do funcionario.';
-COMMENT ON COLUMN sexo IS 'Genero do dependente.';
-COMMENT ON COLUMN data_nascimento IS 'Data de nascimento do dependente.';
-COMMENT ON COLUMN parentesco IS 'Grau de parentesco entre o dependente e o funcionario.';
+COMMENT ON COLUMN dependente.cpf_funcionario IS 'CPF do funcionario.';
+COMMENT ON COLUMN dependente.nome_dependente IS 'Nome do dependente do funcionario.';
+COMMENT ON COLUMN dependente.sexo IS 'Genero do dependente.';
+COMMENT ON COLUMN dependente.data_nascimento IS 'Data de nascimento do dependente.';
+COMMENT ON COLUMN dependente.parentesco IS 'Grau de parentesco entre o dependente e o funcionario.';
 
 
 ALTER TABLE funcionarios ADD CONSTRAINT funcionarios_funcionarios_fk
