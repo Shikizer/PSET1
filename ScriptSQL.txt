@@ -31,7 +31,7 @@ CREATE TABLE departamento (
                 cpf_gerente CHAR(11) NOT NULL,
                 data_inicio_gerente DATE,
                 PRIMARY KEY (numero_departamento),
-                UNIQUE (cpf_gerente)
+                UNIQUE (cpf_gerente),
                 UNIQUE (nome_departamento)
 );
 COMMENT ON TABLE departamento IS 'Tabela com informações sobre os departamentos.';
