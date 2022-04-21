@@ -12,6 +12,19 @@ CREATE TABLE funcionarios (
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (cpf)
 );
+COMMENT ON TABLE funcionarios IS "Tabela com as informações dos funcionarios.";
+COMMENT ON COLUMN cpf IS "CPF do funcionario.";
+COMMENT ON COLUMN primeiro_nome IS "Primeiro nome do funcionario.";
+COMMENT ON COLUMN nome_meio IS "Nome do meio do funcionario.";
+COMMENT ON COLUMN ultimo_nome IS "Ultimo nome do funcionario.";
+COMMENT ON COLUMN data_nascimento IS "Data de nascimento do funcionario.";
+COMMENT ON COLUMN endereco IS "Endereco do funcionario.";
+COMMENT ON COLUMN sexo IS "Genero do funcionario.";
+COMMENT ON COLUMN salario IS "Salario do funcionario.";
+COMMENT ON COLUMN cpf_supervisor IS "CPF do supervisor deste funcionario.";
+COMMENT ON COLUMN numero_departamento IS "Numero do departamento em que o funcionario esta.";
+
+
 
 
 CREATE TABLE departamento (
