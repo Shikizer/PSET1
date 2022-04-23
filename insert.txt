@@ -11,13 +11,13 @@ INSERT INTO localizacoes_departamento (local, numero_departamento) VALUES
 ('São Paulo', 5);
 
 INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES
-('12345678966', 'Alicia', 'F', '30-12-1988', 'Filha'),
+('12345678966', 'Alicia', 'F', '12-30-1988', 'Filha'),
 ('12345678966', 'Elizabeth', 'F', '05-05-1967', 'Esposa'),
-('12345678966', 'Michael', 'M', '04-01-1988', 'Filho'),
-('33344555587', 'Alicia', 'F', '05-04-1986', 'Filha'),
-('33344555587', 'Janaina', 'F', '03-05-1958', 'Esposa'),
-('33344555587', 'Tiago', 'M', '25-10-1983', 'Filho'),
-('98765432168', 'Antonio', 'M', '28-02-1942', 'Marido');
+('12345678966', 'Michael', 'M', '01-04-1988', 'Filho'),
+('33344555587', 'Alicia', 'F', '04-05-1986', 'Filha'),
+('33344555587', 'Janaina', 'F', '05-03-1958', 'Esposa'),
+('33344555587', 'Tiago', 'M', '10-25-1983', 'Filho'),
+('98765432168', 'Antonio', 'M', '02-28-1942', 'Marido');
 
 INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES
 ('ProdutoX', 1, 'Santo André', 5),
@@ -28,12 +28,12 @@ INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departa
 ('Novosbeneficios', 30, 'Mauá', 4);
 
 INSERT INTO funcionarios (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
-VALUES ('Jorge','E','Brito','88866555576','10-11-1937','Rua do Horto, 35, São Paulo, SP','M',55000,NULL,1),
-('Fernando','T','Wong','33344555587','08-12-1955','Rua da Lapa, 34, São Paulo, SP','M',40000,'88866555576',5),
-('Jennifer','S','Souza','98765432168','20-06-1941','Av. Arthur de Lima, 54, Santo André, SP','F',43000,'88866555576',4),
-('João','B','Silva','12345678966','09-01-1965','Rua das Flores, 751, São Paulo, SP','M',30000,'333445555587',5),
-('Alice','J','Zelaya','99988777767','19-01-1968','Rua Souza Lima, 35, Curitiba, PR','F',25000,'987654323168',4),
-('Ronaldo','K','Lima','66688444476','15-09-1962','Rua Rebouças, 65, Piracicaba, SP','M',38000,'333445555587',5),
-('Joice','A','Leite','45345345376','31-07-1972','Av. Lucas Obes, 74, São Paulo, SP','F',25000,'333445555587',5),
-('André','V','Pereira','98798798733','29-03-1969','Rua Timbira, 35, São Paulo, SP','M',25000,'98765432168', 4);
+VALUES ('Jorge','E','Brito','88866555576','11-10-1937','Rua do Horto, 35, São Paulo, SP','M',55000,NULL,1),
+('Fernando','T','Wong','33344555587','12-08-1955','Rua da Lapa, 34, São Paulo, SP','M',40000,'88866555576',5),
+('Jennifer','S','Souza','98765432168','06-20-1941','Av. Arthur de Lima, 54, Santo André, SP','F',43000,'88866555576',4),
+('João','B','Silva','12345678966','01-09-1965','Rua das Flores, 751, São Paulo, SP','M',30000,'333445555587',5),
+('Alice','J','Zelaya','99988777767','01-19-1968','Rua Souza Lima, 35, Curitiba, PR','F',25000,'987654323168',4),
+('Ronaldo','K','Lima','66688444476','09-15-1962','Rua Rebouças, 65, Piracicaba, SP','M',38000,'333445555587',5),
+('Joice','A','Leite','45345345376','07-31-1972','Av. Lucas Obes, 74, São Paulo, SP','F',25000,'333445555587',5),
+('André','V','Pereira','98798798733','03-29-1969','Rua Timbira, 35, São Paulo, SP','M',25000,'98765432168', 4);
 
