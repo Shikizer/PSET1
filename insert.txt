@@ -1,3 +1,22 @@
+INSERT INTO funcionarios (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
+VALUES ('Jorge','E','Brito','88866555576','11-10-1937','Rua do Horto, 35, São Paulo, SP','M',55000,NULL,1),
+('Fernando','T','Wong','33344555587','12-08-1955','Rua da Lapa, 34, São Paulo, SP','M',40000,'88866555576',5),
+('Jennifer','S','Souza','98765432168','06-20-1941','Av. Arthur de Lima, 54, Santo André, SP','F',43000,'88866555576',4),
+('João','B','Silva','12345678966','01-09-1965','Rua das Flores, 751, São Paulo, SP','M',30000,'33344555587',5),
+('Alice','J','Zelaya','99988777767','01-19-1968','Rua Souza Lima, 35, Curitiba, PR','F',25000,'98765432168',4),
+('Ronaldo','K','Lima','66688444476','09-15-1962','Rua Rebouças, 65, Piracicaba, SP','M',38000,'33344555587',5),
+('Joice','A','Leite','45345345376','07-31-1972','Av. Lucas Obes, 74, São Paulo, SP','F',25000,'33344555587',5),
+('André','V','Pereira','98798798733','03-29-1969','Rua Timbira, 35, São Paulo, SP','M',25000,'98765432168', 4);
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES
+('12345678966', 'Alicia', 'F', '12-30-1988', 'Filha'),
+('12345678966', 'Elizabeth', 'F', '05-05-1967', 'Esposa'),
+('12345678966', 'Michael', 'M', '01-04-1988', 'Filho'),
+('33344555587', 'Alicia', 'F', '04-05-1986', 'Filha'),
+('33344555587', 'Janaina', 'F', '05-03-1958', 'Esposa'),
+('33344555587', 'Tiago', 'M', '10-25-1983', 'Filho'),
+('98765432168', 'Antonio', 'M', '02-28-1942', 'Marido');
+
 INSERT INTO departamento (numero_departamento, nome_departamento, data_inicio_gerente, cpf_gerente) VALUES
 (1, 'Matriz', '06-19-1981', '88866555576'),
 (4, 'Administração', '01-01-1995', '98765432168'),
@@ -10,15 +29,6 @@ INSERT INTO localizacoes_departamento (local, numero_departamento) VALUES
 ('São Paulo', 1),
 ('São Paulo', 5);
 
-INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES
-('12345678966', 'Alicia', 'F', '12-30-1988', 'Filha'),
-('12345678966', 'Elizabeth', 'F', '05-05-1967', 'Esposa'),
-('12345678966', 'Michael', 'M', '01-04-1988', 'Filho'),
-('33344555587', 'Alicia', 'F', '04-05-1986', 'Filha'),
-('33344555587', 'Janaina', 'F', '05-03-1958', 'Esposa'),
-('33344555587', 'Tiago', 'M', '10-25-1983', 'Filho'),
-('98765432168', 'Antonio', 'M', '02-28-1942', 'Marido');
-
 INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES
 ('ProdutoX', 1, 'Santo André', 5),
 ('ProdutoY', 2, 'Itu', 5),
@@ -26,14 +36,3 @@ INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departa
 ('Informatização', 10, 'Mauá', 4),
 ('Reorganização', 20, 'São Paulo', 1),
 ('Novosbeneficios', 30, 'Mauá', 4);
-
-INSERT INTO funcionarios (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
-VALUES ('Jorge','E','Brito','88866555576','11-10-1937','Rua do Horto, 35, São Paulo, SP','M',55000,NULL,1),
-('Fernando','T','Wong','33344555587','12-08-1955','Rua da Lapa, 34, São Paulo, SP','M',40000,'88866555576',5),
-('Jennifer','S','Souza','98765432168','06-20-1941','Av. Arthur de Lima, 54, Santo André, SP','F',43000,'88866555576',4),
-('João','B','Silva','12345678966','01-09-1965','Rua das Flores, 751, São Paulo, SP','M',30000,'33344555587',5),
-('Alice','J','Zelaya','99988777767','01-19-1968','Rua Souza Lima, 35, Curitiba, PR','F',25000,'98765432168',4),
-('Ronaldo','K','Lima','66688444476','09-15-1962','Rua Rebouças, 65, Piracicaba, SP','M',38000,'33344555587',5),
-('Joice','A','Leite','45345345376','07-31-1972','Av. Lucas Obes, 74, São Paulo, SP','F',25000,'33344555587',5),
-('André','V','Pereira','98798798733','03-29-1969','Rua Timbira, 35, São Paulo, SP','M',25000,'98765432168', 4);
-
