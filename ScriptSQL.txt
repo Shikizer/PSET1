@@ -91,7 +91,6 @@ COMMENT ON COLUMN dependente.sexo IS 'Genero do dependente.';
 COMMENT ON COLUMN dependente.data_nascimento IS 'Data de nascimento do dependente.';
 COMMENT ON COLUMN dependente.parentesco IS 'Grau de parentesco entre o dependente e o funcionario.';
 
-
 ALTER TABLE funcionarios ADD CONSTRAINT funcionarios_funcionarios_fk
 FOREIGN KEY (cpf_supervisor)
 REFERENCES funcionarios (cpf)
