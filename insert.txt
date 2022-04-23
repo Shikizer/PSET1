@@ -1,0 +1,31 @@
+INSERT INTO departamento (numero_departamento, nome_departamento, data_inicio_gerente, cpf_gerente) VALUES
+(1, 'Matriz', '1981-06-19', '88866555576'),
+(4, 'Administração', '1995-01-01', '98765432168'),
+(5, 'Pesquisa', '1998-05-22', '33344555587');
+
+INSERT INTO localizacoes_departamento (local, numero_departamento) VALUES
+('Itu', 5),
+('Mauá', 4),
+('Santo André', 5),
+('São Paulo', 1),
+('São Paulo', 5);
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES
+('12345678966', 'Alicia', 'F', '30-12-1988', 'Filha'),
+('12345678966', 'Elizabeth', 'F', '05-05-1967', 'Esposa'),
+('12345678966', 'Michael', 'M', '04-01-1988', 'Filho'),
+('33344555587', 'Alicia', 'F', '05-04-1986', 'Filha'),
+('33344555587', 'Janaina', 'F', '03-05-1958', 'Esposa'),
+('33344555587', 'Tiago', 'M', '25-10-1983', 'Filho'),
+('98765432168', 'Antonio', 'M', '28-02-1942', 'Marido');
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES
+('ProdutoX', 1, 'Santo André', 5),
+('ProdutoY', 2, 'Itu', 5),
+('ProdutoZ', 3, 'São Paulo', 5),
+('Informatização', 10, 'Mauá', 4),
+('Reorganização', 20, 'São Paulo', 1),
+('Novosbeneficios', 30, 'Mauá', 4);
+
+
+
