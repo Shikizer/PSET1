@@ -1,3 +1,4 @@
+/* Script para criação da tabela "funcionarios" e seus comentarios*/
 CREATE TABLE funcionarios (
                 cpf CHAR(11) NOT NULL,
                 primeiro_nome VARCHAR(15) NOT NULL,
@@ -24,7 +25,7 @@ COMMENT ON COLUMN funcionarios.cpf_supervisor IS 'CPF do supervisor deste funcio
 COMMENT ON COLUMN funcionarios.numero_departamento IS 'Numero do departamento em que o funcionario esta.';
 
 
-
+/* Script para criação da tabela "departamento" e seus comentarios*/
 CREATE TABLE departamento (
                 numero_departamento INT NOT NULL,
                 nome_departamento VARCHAR(15) NOT NULL,
@@ -40,7 +41,7 @@ COMMENT ON COLUMN departamento.nome_departamento IS 'Nome do departamento.';
 COMMENT ON COLUMN departamento.cpf_gerente IS 'Nome do gerente do departamento.';
 COMMENT ON COLUMN departamento.data_inicio_gerente IS 'Data de inicio do gerente no departamento em questão.';
 
-
+/* Script para criação da tabela "localizacoes_departamento" e seus comentarios*/
 CREATE TABLE localizacoes_departamento (
                 numero_departamento INT NOT NULL,
                 local VARCHAR(45) NOT NULL,
@@ -50,7 +51,7 @@ COMMENT ON TABLE localizacoes_departamento IS 'Tabela com a localização dos de
 COMMENT ON COLUMN localizacoes_departamento.numero_departamento IS 'Numero do departamento em questão.';
 COMMENT ON COLUMN localizacoes_departamento.local IS 'Endereço do departamento.';
 
-
+/* Script para criação da tabela "projeto" e seus comentarios*/
 CREATE TABLE projeto (
                 numero_projeto INT NOT NULL,
                 nome_projeto VARCHAR(15) NOT NULL,
@@ -63,7 +64,7 @@ COMMENT ON COLUMN projeto.numero_projeto IS 'Numero do projeto.';
 COMMENT ON COLUMN projeto.nome_projeto IS 'Nome do projeto.';
 COMMENT ON COLUMN projeto.numero_departamento IS 'Numero do departamento em que o projeto esta.';
 
-
+/* Script para criação da tabela "trabalha_em" e seus comentarios*/
 CREATE TABLE trabalha_em (
                 cpf_funcionario CHAR(11) NOT NULL,
                 numero_projeto INT NOT NULL,
@@ -75,7 +76,7 @@ COMMENT ON COLUMN trabalha_em.cpf_funcionario IS 'CPF do funcionario.';
 COMMENT ON COLUMN trabalha_em.numero_projeto IS 'Numero do projeto em que o funcionario esta presente.';
 COMMENT ON COLUMN trabalha_em.horas IS 'Horas que o funcionario gastou neste projeto.';
 
-
+/* Script para criação da tabela "dependente" e seus comentarios*/
 CREATE TABLE dependente (
                 cpf_funcionario CHAR(11) NOT NULL,
                 nome_dependente VARCHAR(15) NOT NULL,
@@ -91,6 +92,7 @@ COMMENT ON COLUMN dependente.sexo IS 'Genero do dependente.';
 COMMENT ON COLUMN dependente.data_nascimento IS 'Data de nascimento do dependente.';
 COMMENT ON COLUMN dependente.parentesco IS 'Grau de parentesco entre o dependente e o funcionario.';
 
+/* A partir daqui todas as linhas do script são para adicionar relacionamentos e constraints*/
 ALTER TABLE funcionarios ADD CONSTRAINT funcionarios_funcionarios_fk
 FOREIGN KEY (cpf_supervisor)
 REFERENCES funcionarios (cpf)
