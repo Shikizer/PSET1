@@ -134,3 +134,8 @@ REFERENCES projeto (numero_projeto)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
+ALTER TABLE funcionarios ADD CONSTRAINT c_sexo_funcionario
+CHECK (sexo='m' or sexo='f');
+
+ALTER TABLE dependente ADD CONSTRAINT c_sexo_dependente
+CHECK (sexo='m' or sexo='f');
