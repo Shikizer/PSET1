@@ -4,7 +4,7 @@ CREATE TABLE funcionarios (
                 nome_meio CHAR(1),
                 ultimo_nome VARCHAR(15) NOT NULL,
                 data_nascimento DATE,
-                endereco VARCHAR(30),
+                endereco VARCHAR(70),
                 sexo CHAR(1),
                 salario DECIMAL(10,2),
                 cpf_supervisor CHAR(11),
@@ -43,7 +43,7 @@ COMMENT ON COLUMN departamento.data_inicio_gerente IS 'Data de inicio do gerente
 
 CREATE TABLE localizacoes_departamento (
                 numero_departamento INT NOT NULL,
-                local VARCHAR(15) NOT NULL,
+                local VARCHAR(45) NOT NULL,
                 PRIMARY KEY (numero_departamento, local)
 );
 COMMENT ON TABLE localizacoes_departamento IS 'Tabela com a localização dos departamentos.';
@@ -54,7 +54,7 @@ COMMENT ON COLUMN localizacoes_departamento.local IS 'Endereço do departamento.
 CREATE TABLE projeto (
                 numero_projeto INT NOT NULL,
                 nome_projeto VARCHAR(15) NOT NULL,
-                local_projeto VARCHAR(15),
+                local_projeto VARCHAR(45),
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (numero_projeto)
 );
