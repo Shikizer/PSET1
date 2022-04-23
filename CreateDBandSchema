@@ -1,0 +1,4 @@
+CREATE DATABASE uvv WITH OWNER = Shikizer TEMPLATE = template0 ENCODING = UTF8 LC_COLLATE = 'pt_BR.UTF-8' LC_CTYPE = 'pt_BR.UTF-8' ALLOW_CONNECTIONS = true;
+CREATE SCHEMA elmasri;
+ALTER USER Shikizer
+SET SEARCH_PATH TO elmasri, "$user", public;
