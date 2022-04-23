@@ -1,4 +1,6 @@
+/*Primeiro temos o comando para criar o banco de dados com todas as especificações solicitadas*/
 CREATE DATABASE uvv WITH OWNER = Shikizer TEMPLATE = template0 ENCODING = UTF8 LC_COLLATE = 'pt_BR.UTF-8' LC_CTYPE = 'pt_BR.UTF-8' ALLOW_CONNECTIONS = true;
+/*Depois criamos o schema elmasri para armazenar os metadados das tabelas e "setamos" esta ordem de "schemas" para toda vez que o SGBD seja iniciado com o usuario ele vai seguir esta ordem.*/
 CREATE SCHEMA elmasri;
 ALTER USER Shikizer
 SET SEARCH_PATH TO elmasri, "$user", public;
