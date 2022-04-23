@@ -1,7 +1,7 @@
 INSERT INTO departamento (numero_departamento, nome_departamento, data_inicio_gerente, cpf_gerente) VALUES
-(1, 'Matriz', '1981-06-19', '88866555576'),
-(4, 'Administração', '1995-01-01', '98765432168'),
-(5, 'Pesquisa', '1998-05-22', '33344555587');
+(1, 'Matriz', '19-06-1981', '88866555576'),
+(4, 'Administração', '01-01-1995', '98765432168'),
+(5, 'Pesquisa', '22-05-1998', '33344555587');
 
 INSERT INTO localizacoes_departamento (local, numero_departamento) VALUES
 ('Itu', 5),
