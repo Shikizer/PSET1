@@ -38,7 +38,7 @@ CREATE TABLE departamento (
 COMMENT ON TABLE departamento IS 'Tabela com informações sobre os departamentos.';
 COMMENT ON COLUMN departamento.numero_departamento IS 'Numero do departamento.';
 COMMENT ON COLUMN departamento.nome_departamento IS 'Nome do departamento.';
-COMMENT ON COLUMN departamento.cpf_gerente IS 'Nome do gerente do departamento.';
+COMMENT ON COLUMN departamento.cpf_gerente IS 'CPF do gerente do departamento.';
 COMMENT ON COLUMN departamento.data_inicio_gerente IS 'Data de inicio do gerente no departamento em questão.';
 
 /* Script para criação da tabela "localizacoes_departamento" e seus comentarios*/
@@ -62,6 +62,7 @@ CREATE TABLE projeto (
 COMMENT ON TABLE projeto IS 'Tabela com as informações sobre determinado projeto.';
 COMMENT ON COLUMN projeto.numero_projeto IS 'Numero do projeto.';
 COMMENT ON COLUMN projeto.nome_projeto IS 'Nome do projeto.';
+COMMENT ON COLUMN projeto.local_projeto IS 'Localização do projeto';
 COMMENT ON COLUMN projeto.numero_departamento IS 'Numero do departamento em que o projeto esta.';
 
 /* Script para criação da tabela "trabalha_em" e seus comentarios*/
