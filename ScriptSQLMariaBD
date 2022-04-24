@@ -1,0 +1,108 @@
+/* Script para criação da tabela "funcionarios" e seus comentarios*/
+CREATE TABLE funcionarios (
+                cpf CHAR(11) NOT NULL COMMENT 'CPF do funcionario.',
+                primeiro_nome VARCHAR(15) NOT NULL COMMENT 'Primeiro nome do funcionario.',
+                nome_meio CHAR(1) COMMENT 'Nome do meio do funcionario.',
+                ultimo_nome VARCHAR(15) NOT NULL COMMENT 'Ultimo nome do funcionario.',
+                data_nascimento DATE COMMENT 'Data de nascimento do funcionario.',
+                endereco VARCHAR(70) COMMENT 'Endereco do funcionario.',
+                sexo CHAR(1) COMMENT 'Genero do funcionario.',
+                salario DECIMAL(10,2) COMMENT 'Salario do funcionario.',
+                cpf_supervisor CHAR(11) COMMENT 'CPF do supervisor deste funcionario.',
+                numero_departamento INT NOT NULL COMMENT 'Numero do departamento em que o funcionario esta.',
+                PRIMARY KEY (cpf)
+)COMMENT='Tabela com as informações dos funcionarios.';
+
+/* Script para criação da tabela "departamento" e seus comentarios*/
+CREATE TABLE departamento (
+                numero_departamento INT NOT NULL COMMENT 'Numero do departamento.',
+                nome_departamento VARCHAR(15) NOT NULL COMMENT 'Nome do departamento.',
+                cpf_gerente CHAR(11) NOT NULL COMMENT 'CPF do gerente do departamento.',
+                data_inicio_gerente DATE COMMENT 'Data de inicio do gerente no departamento em questão.',
+                PRIMARY KEY (numero_departamento),
+                UNIQUE (cpf_gerente),
+                UNIQUE (nome_departamento)
+) COMMENT='Tabela com informações sobre os departamentos.';
+
+/* Script para criação da tabela "localizacoes_departamento" e seus comentarios*/
+CREATE TABLE localizacoes_departamento (
+                numero_departamento INT NOT NULL COMMENT 'Numero do departamento em questão.',
+                local VARCHAR(45) NOT NULL COMMENT 'Endereço do departamento.',
+                PRIMARY KEY (numero_departamento, local)
+)COMMENT='Tabela com a localização dos departamentos.';
+
+/* Script para criação da tabela "projeto" e seus comentarios*/
+CREATE TABLE projeto (
+                numero_projeto INT NOT NULL COMMENT 'Numero do projeto.',
+                nome_projeto VARCHAR(15) NOT NULL COMMENT 'Nome do projeto.',
+                local_projeto VARCHAR(45) COMMENT 'Localização do projeto',
+                numero_departamento INT NOT NULL COMMENT 'Numero do departamento em que o projeto esta.',
+                PRIMARY KEY (numero_projeto)
+)COMMENT='Tabela com as informações sobre determinado projeto.';
+
+/* Script para criação da tabela "trabalha_em" e seus comentarios*/
+CREATE TABLE trabalha_em (
+                cpf_funcionario CHAR(11) NOT NULL COMMENT 'CPF do funcionario.',
+                numero_projeto INT NOT NULL COMMENT 'Numero do projeto em que o funcionario esta presente.',
+                horas DECIMAL(3,1) NOT NULL COMMENT 'Horas que o funcionario gastou neste projeto.',
+                PRIMARY KEY (cpf_funcionario, numero_projeto)
+)COMMENT='Tabela com informações sobre onde os funcionarios trabalham e em que projeto eles estão.';
+
+/* Script para criação da tabela "dependente" e seus comentarios*/
+CREATE TABLE dependente (
+                cpf_funcionario CHAR(11) NOT NULL COMMENT 'CPF do funcionario.',
+                nome_dependente VARCHAR(15) NOT NULL COMMENT 'Nome do dependente do funcionario.',
+                sexo CHAR(1) COMMENT 'Genero do dependente.',
+                data_nascimento DATE COMMENT 'Data de nascimento do dependente.',
+                parentesco VARCHAR(15) COMMENT 'Grau de parentesco entre o dependente e o funcionario.',
+                PRIMARY KEY (cpf_funcionario, nome_dependente)
+)COMMENT='Informações sobre os dependentes do funcionario.';
+
+/* A partir daqui todas as linhas do script são para adicionar relacionamentos e constraints*/
+ALTER TABLE funcionarios ADD CONSTRAINT funcionarios_funcionarios_fk
+FOREIGN KEY (cpf_supervisor)
+REFERENCES funcionarios (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE dependente ADD CONSTRAINT funcionarios_dependente_fk
+FOREIGN KEY (cpf_funcionario)
+REFERENCES funcionarios (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE departamento ADD CONSTRAINT funcionarios_departamento_fk
+FOREIGN KEY (cpf_gerente)
+REFERENCES funcionarios (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE trabalha_em ADD CONSTRAINT funcionarios_trabalha_em_fk
+FOREIGN KEY (cpf_funcionario)
+REFERENCES funcionarios (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE projeto ADD CONSTRAINT departamento_projeto_fk
+FOREIGN KEY (numero_departamento)
+REFERENCES departamento (numero_departamento)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE localizacoes_departamento ADD CONSTRAINT departamento_localizacoes_departamento_fk
+FOREIGN KEY (numero_departamento)
+REFERENCES departamento (numero_departamento)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE trabalha_em ADD CONSTRAINT projeto_trabalha_em_fk
+FOREIGN KEY (numero_projeto)
+REFERENCES projeto (numero_projeto)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE funcionarios ADD CONSTRAINT c_sexo_funcionario
+CHECK (sexo='M' or sexo='F');
+
+ALTER TABLE dependente ADD CONSTRAINT c_sexo_dependente
+CHECK (sexo='M' or sexo='F');
