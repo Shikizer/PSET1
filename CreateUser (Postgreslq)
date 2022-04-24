@@ -1,0 +1,11 @@
+/*Esta é a base do script para criar um usuario.*/
+SU - POSTGRES 
+CREATE USER <username> WITH ENCRYPTED PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE <database name> TO <username>;
+
+/*Este é o script utilizado pelo aluno para criar o proprio usuario*/
+SU - POSTGRES
+CREATE USER Shikizer WITH ECRYPTED PASSWORD '123321';
+GRANT ALL PRIVILEGES ON DATABASE uvv TO Shikizer;
+
+
