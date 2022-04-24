@@ -1,0 +1,8 @@
+/* Primeiro entraremos no MariaBD com o um superusuario para criarmos um proprio*/
+mysql -u root -p
+/* Depois criaremos um usuario proprio com todas os privilegio*/
+CREATE USER <username> IDENTIFIED BY <password>
+GRANT ALL PRIVILEGES ON *.* TO <username> WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit
+
