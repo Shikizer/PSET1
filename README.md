@@ -1,6 +1,6 @@
 <h1>Informações sobre os arquivos do PSET-1</h1>
 <b>Este trabalho foi realizado por mim Leonardo Silva com a ajuda de documentações e forums online.</b><br><br>
-<b> Modelo Elmasri.png - Contém o modelo proposto por elmasri com algumas alterações.</b><br
+Modelo Elmasri.png - Contém o modelo proposto por elmasri com algumas alterações.<br>
 
 <h2> POSTGRESQL </h2> <br>
 
