@@ -8,7 +8,7 @@
 <b>ScripSQL.txt</b> - Arquivo com os comandos para criação de tabelas, comentarios e relações do banco de dados.<br>
 <b>Insert.txt</b> - Arquivo com os comandos para inserção de dados no banco de dados.<br><br><br>
 <h2> MariaDB </h2>
-
+<h3>Obs: Convem colar o script em partes para evitar bugs do SGBD!!</h3>
 <b>CreateUser</b> - Arquivo com os comandos para criação de um usuario.<br>
 <b>ScripSQL.txt</b> - Arquivo com os comandos para criação de tabelas, comentarios e relações do banco de dados.<br>
 <b>Insert.txt</b> - Arquivo com os comandos para inserção de dados no banco de dados.<br><br><br>
