@@ -22,6 +22,9 @@ salario AS Salário, CAST((salario*1.15) AS DECIMAL(10,2)) AS Salario_com_reajus
 WHERE salario >= '35000';
 
 /*05*/
-...
-
+SELECT nome_departamento AS Departamento, g.primeiro_nome AS Gerente, f.primeiro_nome AS Funcionário, salario AS Salários
+FROM departamento d INNER JOIN funcionarios f, 
+(SELECT primeiro_nome, cpf FROM funcionarios f INNER JOIN departamento d WHERE f.cpf = d.cpf_gerente) AS g
+WHERE d.numero_departamento = f.numero_departamento AND g.cpf = d.cpf_gerente
+ORDER BY d.nome_departamento ASC, f.salario DESC;
 
