@@ -28,3 +28,12 @@ FROM departamento d INNER JOIN funcionarios f,
 WHERE d.numero_departamento = f.numero_departamento AND g.cpf = d.cpf_gerente
 ORDER BY d.nome_departamento ASC, f.salario DESC;
 
+/*06*/
+SELECT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, dto.nome_departamento AS Departamento,
+dpd.nome_dependente AS Dependente, FLOOR(DATEDIFF(CURDATE(), dpd.data_nascimento)/365.25) AS Idade_dependente,
+CASE WHEN dpd.sexo = 'M' THEN 'Masculino' WHEN dpd.sexo = 'm' THEN 'Masculino'
+WHEN dpd.sexo = 'F' THEN 'Feminino' WHEN dpd.sexo = 'f' THEN 'Feminino' END AS Sexo_dependente
+FROM funcionarios f 
+INNER JOIN departamento dto ON f.numero_departamento = dto.numero_departamento
+INNER JOIN dependente dpd ON dpd.cpf_funcionario = f.cpf;
+
