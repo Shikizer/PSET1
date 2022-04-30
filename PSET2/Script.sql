@@ -37,3 +37,12 @@ FROM funcionarios f
 INNER JOIN departamento dto ON f.numero_departamento = dto.numero_departamento
 INNER JOIN dependente dpd ON dpd.cpf_funcionario = f.cpf;
 
+/*07*/
+SELECT DISTINCT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, dto.nome_departamento AS Departamento,
+CONCAT('R$ ', CAST((f.salario) AS DECIMAL(10,2))) AS Salário FROM funcionarios f
+INNER JOIN departamento dto
+INNER JOIN dependente dpd
+WHERE dto.numero_departamento = f.numero_departamento AND
+f.cpf NOT IN (SELECT dpd.cpf_funcionario FROM dependente dpd);
+
+
